@@ -1,0 +1,12 @@
+{
+  "username": "mostarac90",
+  "name": "Jasmin Krhan",
+  "monogram": "JK",
+  "greeting": "Hi, I'm",
+  "tagline": "Driving projects from start to production",
+  "role": "Senior C#/.NET & Full-Stack Developer",
+  "tags": ["C# / .NET", "Full-Stack", "Azure", "AI Agents & RAG", "12+ years", "Remote · Europe"],
+  "links": [
+    { "id": "linkedin", "label": "LinkedIn", "handle": "in/jasmin-krhan", "url": "https://www.linkedin.com/in/jasmin-krhan-031a84b1/" }
+  ]
+}
