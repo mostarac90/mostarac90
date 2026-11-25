@@ -8,16 +8,18 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "assets");
 const cfg = JSON.parse(await readFile(path.join(ROOT, "config.json"), "utf8"));
 
-// ── "Bosna" palette: flag blue, flag gold, star white, Neretva teal,
-//    Herzegovina pomegranate and Mostar limestone ────────────────────────
+// ── "Trail" palette: night sky, pine forest, moss, granite, trail dust,
+//    sunrise orange, snowcap white and the red-and-white trail blaze ─────
 const C = {
-  night: "#0A1233", panel: "#101B47", line: "#24337A", dots: "#1E2C6B",
-  text: "#F5F2EA", muted: "#A9B3D9",
-  blue: "#1F3FB0", blueDk: "#122672",
-  gold: "#FECB00", goldDk: "#A98700",
-  teal: "#12A39A", tealDk: "#0A6560",
-  pom: "#B8233C", pomDk: "#741427",
-  stone: "#CDBE9E", stoneDk: "#857759",
+  night: "#111923", panel: "#16212E", line: "#2A3A4E", dots: "#1F2C3B",
+  text: "#F1F3EE", muted: "#9AA8B8",
+  forest: "#2F6B4F", forestDk: "#1B4231",
+  moss: "#86B04A", mossDk: "#56762C",
+  granite: "#4B5B70", graniteDk: "#2E3A4A",
+  dust: "#CDA86E", dustDk: "#8C6F40",
+  sun: "#EE6B2C", sunDk: "#A2441A",
+  snow: "#EEF1EC", snowDk: "#A9B2AA",
+  blaze: "#D7263D",
 };
 const SANS = "'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif";
 const MONO = "ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace";
@@ -40,12 +42,15 @@ function star(cx, cy, r, fill) {
   }
   return `<polygon points="${pts.join(" ")}" fill="${fill}"/>`;
 }
+// Red-and-white trail blaze, the waymark painted on rocks and trees along mountain paths.
+const blaze = (cx, cy, r) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${C.blaze}"/><circle cx="${cx}" cy="${cy}" r="${(r * 0.45).toFixed(1)}" fill="#FFFFFF"/>`;
 
-const svg = (w, h, body, title) =>
+const svg = (w, h, body, title, defs = "") =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(title)}">
 <title>${esc(title)}</title>
 <defs>
   <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="${C.dots}"/></pattern>
+  ${defs}
 </defs>
 ${body}
 </svg>
@@ -127,68 +132,78 @@ for (const d of [...all.keys()].sort()) {
 }
 
 // ── Hero ────────────────────────────────────────────────────────────────
-function hero() {
-  const H = 270;
-  // Bosnian flag corner: gold right triangle, white stars along the diagonal.
-  const ax = 690, bx = W, by = H;
-  let stars = "";
-  for (let i = -1; i <= 7; i++) {
-    const t = i / 6.5;
-    stars += star(ax + (bx - ax) * t - 26, by * t + 4, 9, C.text);
-  }
-  const flag = `<clipPath id="clip"><rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="18"/></clipPath>
-<g clip-path="url(#clip)"><polygon points="${ax},0 ${W},0 ${W},${H}" fill="${C.gold}"/>${stars}</g>`;
+function hero(height) {
+  const H = height;
+  const b = H; // ground line
+  // Mountain range on the right: far granite ridge, snow-capped mid ridge, dark foreground,
+  // with a dashed trail switchbacking up to a summit flag.
+  const sky = `<circle cx="792" cy="58" r="24" fill="${C.sun}" opacity=".9"/>
+${[[600, 40], [640, 70], [700, 34], [560, 92], [742, 26]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.4" fill="${C.snow}" opacity=".7"/>`).join("")}`;
+  const far = `<path d="M520 ${b} L575 ${b - 95} L612 ${b - 70} L668 ${b - 165} L705 ${b - 120} L748 ${b - 182} L800 ${b - 128} L840 ${b - 160} L840 ${b} Z" fill="${C.granite}" opacity=".55"/>`;
+  const mid = `<path d="M560 ${b} L622 ${b - 82} L655 ${b - 62} L722 ${b - 148} L770 ${b - 96} L806 ${b - 120} L840 ${b - 84} L840 ${b} Z" fill="${C.forestDk}"/>
+<path d="M722 ${b - 148} L706 ${b - 127} L715 ${b - 130} L722 ${b - 121} L730 ${b - 131} L739 ${b - 126} Z" fill="${C.snow}"/>
+<path d="M806 ${b - 120} L796 ${b - 107} L803 ${b - 109} L809 ${b - 103} L815 ${b - 110} Z" fill="${C.snow}"/>`;
+  const trail = `<path d="M610 ${b - 6} C660 ${b - 18} 640 ${b - 40} 688 ${b - 52} S678 ${b - 88} 704 ${b - 100} S716 ${b - 126} 722 ${b - 146}" fill="none" stroke="${C.sun}" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
+<line x1="722" y1="${b - 148}" x2="722" y2="${b - 176}" stroke="${C.snow}" stroke-width="2"/>
+<polygon points="722,${b - 176} 742,${b - 169} 722,${b - 162}" fill="${C.sun}"/>`;
+  const near = `<path d="M590 ${b} Q660 ${b - 34} 712 ${b - 24} T840 ${b - 38} L840 ${b} Z" fill="${C.night}"/>
+${[[640, 12], [664, 18], [790, 26], [812, 30]].map(([x, h]) => `<polygon points="${x},${b - h - 18} ${x - 7},${b - h + 2} ${x + 7},${b - h + 2}" fill="${C.forest}"/>`).join("")}`;
+  const scene = `<clipPath id="clip"><rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="18"/></clipPath>
+<g clip-path="url(#clip)">${sky}${far}${mid}${trail}${near}</g>`;
+  return scene;
+}
 
-  const logo = `${tile(36, 40, 100, 100, C.blue, C.blueDk)}
-<polygon points="76,40 124,40 124,140" fill="${C.gold}"/>
-<rect x="36" y="40" width="100" height="100" rx="12" fill="none" stroke="${C.night}" stroke-opacity=".35" stroke-width="1.5"/>
-<text x="74" y="106" text-anchor="middle" font-family="${SANS}" font-weight="800" font-size="38" fill="${C.text}">${esc(cfg.monogram)}</text>`;
+function heroCard() {
+  const logo = `${tile(36, 40, 100, 100, C.forest, C.forestDk)}
+<path d="M44 132 L70 96 L82 110 L100 84 L128 132 Z" fill="${C.forestDk}"/>
+<path d="M100 84 L93 94 L100 92 L106 97 Z" fill="${C.snow}"/>
+<text x="74" y="84" text-anchor="middle" font-family="${SANS}" font-weight="800" font-size="34" fill="${C.text}">${esc(cfg.monogram)}</text>
+${blaze(122, 54, 7)}`;
 
   const tx = 166;
-  const text = `<text x="${tx}" y="62" font-family="${MONO}" font-size="15" fill="${C.stone}">${esc(cfg.greeting)}</text>
+  const text = `<text x="${tx}" y="62" font-family="${MONO}" font-size="15" fill="${C.dust}">${esc(cfg.greeting)}</text>
 <text x="${tx}" y="104" font-family="${SANS}" font-weight="800" font-size="42" fill="${C.text}">${esc(cfg.name)}</text>
-<rect x="${tx + 2}" y="116" width="62" height="5" rx="2.5" fill="${C.gold}"/>
-<rect x="${tx + 70}" y="116" width="14" height="5" rx="2.5" fill="${C.teal}"/>
+<path d="M${tx + 2} 120 l14 -6 l12 4 l16 -8 l14 6 l18 -4" fill="none" stroke="${C.sun}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="${tx}" y="150" font-family="${SANS}" font-weight="600" font-size="18" fill="${C.text}">${esc(cfg.tagline)}</text>
-<text x="${tx}" y="176" font-family="${MONO}" font-size="13" fill="${C.gold}">${esc(cfg.role)}</text>`;
+<text x="${tx}" y="176" font-family="${MONO}" font-size="13" fill="${C.moss}">${esc(cfg.role)}</text>`;
 
-  const colors = [[C.blue, C.blueDk, C.text], [C.teal, C.tealDk, C.text], [C.pom, C.pomDk, C.text], [C.stone, C.stoneDk, C.night]];
+  const colors = [[C.forest, C.forestDk, C.text], [C.sun, C.sunDk, C.night], [C.granite, C.graniteDk, C.text], [C.dust, C.dustDk, C.night], [C.moss, C.mossDk, C.night]];
   let x = tx, y = 196, pills = "";
   cfg.tags.forEach((t, i) => {
     const w = monoWidth(t, 12.5) + 26;
-    if (x + w > 700) { x = tx; y += 36; }
+    if (x + w > 575) { x = tx; y += 36; }
     const [f, s, tc] = colors[i % colors.length];
     pills += `<rect x="${x + 2}" y="${y + 3}" width="${w}" height="26" rx="8" fill="${s}"/>
 <rect x="${x}" y="${y}" width="${w}" height="26" rx="8" fill="${f}"/>
 <text x="${x + w / 2}" y="${y + 17.5}" text-anchor="middle" font-family="${MONO}" font-weight="700" font-size="12.5" fill="${tc}">${esc(t)}</text>`;
     x += w + 10;
   });
-  const height = Math.max(H, y + 26 + 40);
-  return svg(W, height, `${panel(W, height)}\n${flag}\n${logo}\n${text}\n${pills}`, `${cfg.greeting} ${cfg.name}. ${cfg.tagline}`);
+  const height = Math.max(270, y + 26 + 36);
+  return svg(W, height, `${panel(W, height)}\n${hero(height)}\n${logo}\n${text}\n${pills}`, `${cfg.greeting} ${cfg.name}. ${cfg.tagline}`);
 }
 
 // ── Link pills ──────────────────────────────────────────────────────────
 function linkPill(l) {
   const icon = l.id === "linkedin"
-    ? `<rect x="12" y="9" width="20" height="20" rx="4" fill="${C.text}"/><text x="22" y="24" text-anchor="middle" font-family="${SANS}" font-weight="800" font-size="13" fill="${C.blue}">in</text>`
+    ? `<rect x="12" y="9" width="20" height="20" rx="4" fill="${C.text}"/><text x="22" y="24" text-anchor="middle" font-family="${SANS}" font-weight="800" font-size="13" fill="${C.forest}">in</text>`
     : `<text x="22" y="24" text-anchor="middle" font-family="${MONO}" font-weight="700" font-size="13" fill="${C.text}">&lt;/&gt;</text>`;
   const lw = l.label.length * 8.4;
   const w = Math.ceil(44 + lw + 10 + monoWidth(l.handle, 12.5) + 16);
   return svg(w + 4, 42,
-    `<rect x="4" y="5" width="${w - 2}" height="36" rx="9" fill="${C.blueDk}"/>
-<rect x="1" y="1" width="${w - 2}" height="36" rx="9" fill="${C.blue}" stroke="${C.night}" stroke-opacity=".35"/>
+    `<rect x="4" y="5" width="${w - 2}" height="36" rx="9" fill="${C.forestDk}"/>
+<rect x="1" y="1" width="${w - 2}" height="36" rx="9" fill="${C.forest}" stroke="${C.night}" stroke-opacity=".35"/>
 ${icon}
 <text x="42" y="24" font-family="${SANS}" font-weight="700" font-size="14" fill="${C.text}">${esc(l.label)}</text>
-<text x="${42 + lw + 10}" y="24" font-family="${MONO}" font-size="12.5" fill="${C.gold}">${esc(l.handle)}</text>`,
+<text x="${42 + lw + 10}" y="24" font-family="${MONO}" font-size="12.5" fill="${C.dust}">${esc(l.handle)}</text>`,
     `${l.label} ${l.handle}`);
 }
 
 // ── Stats ───────────────────────────────────────────────────────────────
 const ICON = {
-  calendar: (c) => `<rect x="1" y="3" width="16" height="14" rx="2.5" fill="none" stroke="${c}" stroke-width="2"/><rect x="1" y="3" width="16" height="5" rx="2" fill="${c}"/><rect x="4.5" y="0" width="2" height="5" rx="1" fill="${c}"/><rect x="11.5" y="0" width="2" height="5" rx="1" fill="${c}"/>`,
-  flame: (c) => `<path d="M9 0C10 4 15 6 15 11.5A6 6 0 0 1 3 11.5C3 8 5 6.5 6 4C7 6.5 8 7 9 7C9 4.5 9 2.5 9 0Z" fill="${c}"/>`,
-  trophy: (c) => `<path d="M4 1H14V7A5 5 0 0 1 4 7Z" fill="${c}"/><path d="M4 3H1V5A3 3 0 0 0 4 8M14 3H17V5A3 3 0 0 1 14 8" fill="none" stroke="${c}" stroke-width="1.6"/><rect x="8" y="11" width="2" height="3" fill="${c}"/><rect x="5" y="14" width="8" height="3" rx="1" fill="${c}"/>`,
-  bars: (c) => `<rect x="1" y="9" width="4" height="8" rx="1" fill="${c}"/><rect x="7" y="4" width="4" height="13" rx="1" fill="${c}"/><rect x="13" y="0" width="4" height="17" rx="1" fill="${c}"/>`,
+  map: (c) => `<path d="M1 3L6 1L12 3L17 1V15L12 17L6 15L1 17Z" fill="none" stroke="${c}" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 1V15M12 3V17" stroke="${c}" stroke-width="1.5"/>`,
+  steps: (c) => `<ellipse cx="5" cy="11" rx="3.2" ry="5" fill="${c}"/><ellipse cx="13" cy="6" rx="3.2" ry="5" fill="${c}"/>`,
+  peak: (c) => `<path d="M0 17L7 4L11 10L13 7L19 17Z" fill="${c}"/><path d="M7 4V-2M7 -2L12 0L7 2" fill="${c}" stroke="${c}" stroke-width="1.4"/>`,
+  profile: (c) => `<path d="M0 17L4 10L7 13L11 4L15 9L19 6V17Z" fill="${c}"/>`,
   folder: (c) => `<path d="M1 4A2 2 0 0 1 3 2H7L9 4H17A2 2 0 0 1 19 6V14A2 2 0 0 1 17 16H3A2 2 0 0 1 1 14Z" fill="${c}"/>`,
   star: (c) => star(10, 10, 10, c),
   code: (c) => `<path d="M6 3L1 9L6 15M14 3L19 9L14 15" fill="none" stroke="${c}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`,
@@ -196,30 +211,31 @@ const ICON = {
 
 function stats() {
   const H = 330;
-  const head = `<text x="30" y="50" font-family="${SANS}" font-weight="800" font-size="24" fill="${C.text}">On GitHub</text>
-<text x="${W - 30}" y="48" text-anchor="end" font-family="${MONO}" font-size="12.5" fill="${C.muted}">redrawn every night · ${human(today)}</text>`;
+  const head = `${blaze(40, 42, 9)}
+<text x="58" y="50" font-family="${SANS}" font-weight="800" font-size="24" fill="${C.text}">Trail log</text>
+<text x="${W - 30}" y="48" text-anchor="end" font-family="${MONO}" font-size="12.5" fill="${C.muted}">GitHub activity · redrawn every night · ${human(today)}</text>`;
 
   const big = [
-    { v: fmt(lastYear), l: ["contributions in", "the last year"], f: C.blue, s: C.blueDk, t: C.text, i: "calendar", ic: C.gold },
-    { v: `${cur} day${cur === 1 ? "" : "s"}`, l: ["current streak", curStart ? `since ${curStart.getUTCDate()} ${MONTHS[curStart.getUTCMonth()]}` : "start one today"], f: C.teal, s: C.tealDk, t: C.text, i: "flame", ic: C.gold },
-    { v: `${best} day${best === 1 ? "" : "s"}`, l: ["longest streak", "ever"], f: C.gold, s: C.goldDk, t: C.night, i: "trophy", ic: C.pom },
-    { v: fmt(total), l: ["contributions", `since ${firstYear}`], f: C.pom, s: C.pomDk, t: C.text, i: "bars", ic: C.gold },
+    { v: fmt(lastYear), l: ["contributions in", "the last year"], f: C.forest, s: C.forestDk, t: C.text, i: "map", ic: C.dust },
+    { v: `${cur} day${cur === 1 ? "" : "s"}`, l: ["on the trail now", curStart ? `since ${curStart.getUTCDate()} ${MONTHS[curStart.getUTCMonth()]}` : "next run: today"], f: C.sun, s: C.sunDk, t: C.night, i: "steps", ic: C.night },
+    { v: `${best} day${best === 1 ? "" : "s"}`, l: ["longest run", "(best streak)"], f: C.snow, s: C.snowDk, t: C.night, i: "peak", ic: C.blaze },
+    { v: fmt(total), l: ["total ascent", `since ${firstYear}`], f: C.granite, s: C.graniteDk, t: C.text, i: "profile", ic: C.moss },
   ];
   const bw = 180, gap = (W - 60 - bw * 4) / 3;
   let body = "";
   big.forEach((b, k) => {
     const x = 30 + k * (bw + gap), y = 80;
     body += `${tile(x, y, bw, 124, b.f, b.s)}
-<g transform="translate(${x + bw - 34},${y + 16})">${ICON[b.i](b.ic)}</g>
+<g transform="translate(${x + bw - 34},${y + 18})">${ICON[b.i](b.ic)}</g>
 <text x="${x + 16}" y="${y + 62}" font-family="${SANS}" font-weight="800" font-size="32" fill="${b.t}">${esc(b.v)}</text>
 <text x="${x + 16}" y="${y + 88}" font-family="${MONO}" font-size="12.5" fill="${b.t}" fill-opacity=".9">${esc(b.l[0])}</text>
 <text x="${x + 16}" y="${y + 105}" font-family="${MONO}" font-size="12.5" fill="${b.t}" fill-opacity=".9">${esc(b.l[1])}</text>`;
   });
 
   const small = [
-    { v: fmt(user.public_repos), l: "public repos", f: C.stone, s: C.stoneDk, t: C.night, i: "folder", ic: C.blue },
-    { v: fmt(stars), l: "stars earned", f: C.blue, s: C.blueDk, t: C.text, i: "star", ic: C.gold },
-    { v: topLang, l: "top language", f: C.teal, s: C.tealDk, t: C.text, i: "code", ic: C.gold },
+    { v: fmt(user.public_repos), l: "public repos", f: C.dust, s: C.dustDk, t: C.night, i: "folder", ic: C.forestDk },
+    { v: fmt(stars), l: "stars earned", f: C.forest, s: C.forestDk, t: C.text, i: "star", ic: C.dust },
+    { v: topLang, l: "top language", f: C.granite, s: C.graniteDk, t: C.text, i: "code", ic: C.moss },
   ];
   const sw = (W - 60 - 2 * 18) / 3;
   small.forEach((b, k) => {
@@ -234,7 +250,7 @@ function stats() {
     `${fmt(lastYear)} contributions in the last year, ${cur}-day current streak, ${best}-day longest streak, ${fmt(total)} contributions since ${firstYear}`);
 }
 
-// ── Heatmap (last 26 weeks, daily counts written in the cells) ──────────
+// ── Heatmap: elevation profile of weekly totals + daily grid in topo-map tints ──
 function heatmap() {
   const WEEKS = 26, cell = 26, step = 30;
   const start = addDays(today, -today.getUTCDay() - (WEEKS - 1) * 7); // a Sunday
@@ -246,16 +262,34 @@ function heatmap() {
   const q = (p) => nz[Math.min(nz.length - 1, Math.floor(p * nz.length))] ?? 0;
   const [q1, q2, q3] = [q(0.25), q(0.5), q(0.75)];
   const level = (n) => (n === 0 ? 0 : n <= q1 ? 1 : n <= q2 ? 2 : n <= q3 ? 3 : 4);
-  const LV = [[C.night, "#3A4A8C"], [C.blue, C.text], [C.teal, C.text], ["#D9AE0A", C.night], [C.gold, C.night]];
+  // Valley → forest → meadow → scree → snowcap
+  const LV = [[C.night, "#3B4B5E"], [C.forest, C.text], [C.moss, C.night], [C.dust, C.night], [C.snow, C.night]];
 
-  const gw = WEEKS * step - (step - cell), x0 = (W - gw) / 2, y0 = 92;
+  const gw = WEEKS * step - (step - cell), x0 = (W - gw) / 2;
   let body = `<text x="${x0}" y="48" font-family="${SANS}" font-size="16" fill="${C.text}"><tspan font-weight="800" font-size="22">${fmt(sum)}</tspan> contributions in the last 6 months</text>`;
+
+  // Elevation profile: one point per week, like a race course profile.
+  const weeks = Array.from({ length: WEEKS }, (_, w) => days.slice(w * 7, w * 7 + 7).reduce((s, [, n]) => s + n, 0));
+  const pTop = 70, pBot = 150, maxW = Math.max(1, ...weeks);
+  const px = (w) => x0 + w * step + cell / 2;
+  const py = (n) => pBot - (n / maxW) * (pBot - pTop - 14);
+  const line = weeks.map((n, w) => `${w ? "L" : "M"}${px(w).toFixed(1)} ${py(n).toFixed(1)}`).join(" ");
+  const peakW = weeks.indexOf(Math.max(...weeks));
+  body += `<path d="${line} L${px(WEEKS - 1)} ${pBot} L${px(0)} ${pBot} Z" fill="url(#ridge)"/>
+<path d="${line}" fill="none" stroke="${C.moss}" stroke-width="2" stroke-linejoin="round"/>
+<line x1="${x0}" y1="${pBot}" x2="${x0 + gw}" y2="${pBot}" stroke="${C.line}" stroke-width="1.5"/>
+<text x="${x0}" y="${pTop + 6}" font-family="${MONO}" font-size="11" fill="${C.muted}">weekly elevation profile</text>`;
+  if (weeks[peakW] > 0) {
+    const fx = px(peakW), fy = py(weeks[peakW]);
+    body += `<line x1="${fx}" y1="${fy}" x2="${fx}" y2="${fy - 22}" stroke="${C.snow}" stroke-width="1.6"/>
+<polygon points="${fx},${fy - 22} ${fx + 14},${fy - 17} ${fx},${fy - 12}" fill="${C.sun}"/>
+<text x="${fx - 6}" y="${fy - 12}" text-anchor="end" font-family="${MONO}" font-size="11" font-weight="700" fill="${C.sun}">peak ${weeks[peakW]}</text>`;
+  }
+
+  const y0 = 184;
   for (let w = 0; w < WEEKS; w++) {
     const sunday = addDays(start, w * 7);
-    if (sunday.getUTCDate() <= 7 || w === 0) {
-      const m = sunday.getUTCDate() <= 7 ? sunday.getUTCMonth() : -1;
-      if (m >= 0) body += `<text x="${x0 + w * step}" y="${y0 - 10}" font-family="${MONO}" font-size="12.5" fill="${C.stone}">${MONTHS[m]}</text>`;
-    }
+    if (sunday.getUTCDate() <= 7) body += `<text x="${x0 + w * step}" y="${y0 - 10}" font-family="${MONO}" font-size="12.5" fill="${C.dust}">${MONTHS[sunday.getUTCMonth()]}</text>`;
   }
   days.forEach(([d, n], i) => {
     const x = x0 + Math.floor(i / 7) * step, y = y0 + d.getUTCDay() * step;
@@ -266,16 +300,17 @@ function heatmap() {
   });
   const ly = y0 + 7 * step + 22;
   body += `<text x="${x0}" y="${ly + 12}" font-family="${MONO}" font-size="12.5" fill="${C.muted}">contributions per day</text>`;
-  const lx = x0 + gw - 5 * 18 - 74;
-  body += `<text x="${lx}" y="${ly + 12}" font-family="${MONO}" font-size="12.5" fill="${C.muted}">Less</text>`;
-  LV.forEach(([bg], k) => (body += `<rect x="${lx + 38 + k * 18}" y="${ly}" width="14" height="14" rx="3" fill="${bg}"${k ? "" : ` stroke="${C.line}"`}/>`));
-  body += `<text x="${lx + 38 + 5 * 18 + 4}" y="${ly + 12}" font-family="${MONO}" font-size="12.5" fill="${C.muted}">More</text>`;
+  const lx = x0 + gw - 5 * 18 - 90;
+  body += `<text x="${lx}" y="${ly + 12}" font-family="${MONO}" font-size="12.5" fill="${C.muted}">Valley</text>`;
+  LV.forEach(([bg], k) => (body += `<rect x="${lx + 52 + k * 18}" y="${ly}" width="14" height="14" rx="3" fill="${bg}"${k ? "" : ` stroke="${C.line}"`}/>`));
+  body += `<text x="${lx + 52 + 5 * 18 + 4}" y="${ly + 12}" font-family="${MONO}" font-size="12.5" fill="${C.muted}">Summit</text>`;
   const H = ly + 40;
-  return svg(W, H, `${panel(W, H)}\n${body}`, `${fmt(sum)} contributions in the last 6 months`);
+  const defs = `<linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${C.moss}" stop-opacity=".55"/><stop offset="1" stop-color="${C.forest}" stop-opacity=".08"/></linearGradient>`;
+  return svg(W, H, `${panel(W, H)}\n${body}`, `${fmt(sum)} contributions in the last 6 months`, defs);
 }
 
 await mkdir(OUT, { recursive: true });
-await writeFile(path.join(OUT, "hero.svg"), hero());
+await writeFile(path.join(OUT, "hero.svg"), heroCard());
 for (const l of cfg.links) await writeFile(path.join(OUT, `link-${l.id}.svg`), linkPill(l));
 await writeFile(path.join(OUT, "stats.svg"), stats());
 await writeFile(path.join(OUT, "heatmap.svg"), heatmap());

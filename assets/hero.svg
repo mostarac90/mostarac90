@@ -1,34 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="298" viewBox="0 0 840 298" role="img" aria-label="Hi, I&#39;m Jasmin Krhan. Driving projects from start to production">
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="294" viewBox="0 0 840 294" role="img" aria-label="Hi, I&#39;m Jasmin Krhan. Driving projects from start to production">
 <title>Hi, I&#39;m Jasmin Krhan. Driving projects from start to production</title>
 <defs>
-  <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#1E2C6B"/></pattern>
+  <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#1F2C3B"/></pattern>
+  
 </defs>
-<rect x="1" y="1" width="838" height="296" rx="18" fill="#101B47" stroke="#24337A" stroke-width="2"/>
-<rect x="1" y="1" width="838" height="296" rx="18" fill="url(#dots)"/>
-<clipPath id="clip"><rect x="1" y="1" width="838" height="268" rx="18"/></clipPath>
-<g clip-path="url(#clip)"><polygon points="690,0 840,0 840,270" fill="#FECB00"/><polygon points="640.9,-46.5 643.1,-40.6 649.5,-40.3 644.5,-36.4 646.2,-30.3 640.9,-33.8 635.6,-30.3 637.3,-36.4 632.4,-40.3 638.7,-40.6" fill="#F5F2EA"/><polygon points="664.0,-5.0 666.2,0.9 672.6,1.2 667.6,5.2 669.3,11.3 664.0,7.8 658.7,11.3 660.4,5.2 655.4,1.2 661.8,0.9" fill="#F5F2EA"/><polygon points="687.1,36.5 689.3,42.5 695.6,42.8 690.7,46.7 692.4,52.8 687.1,49.3 681.8,52.8 683.5,46.7 678.5,42.8 684.9,42.5" fill="#F5F2EA"/><polygon points="710.2,78.1 712.4,84.0 718.7,84.3 713.7,88.2 715.4,94.4 710.2,90.9 704.9,94.4 706.6,88.2 701.6,84.3 707.9,84.0" fill="#F5F2EA"/><polygon points="733.2,119.6 735.5,125.6 741.8,125.8 736.8,129.8 738.5,135.9 733.2,132.4 727.9,135.9 729.6,129.8 724.7,125.8 731.0,125.6" fill="#F5F2EA"/><polygon points="756.3,161.2 758.5,167.1 764.9,167.4 759.9,171.3 761.6,177.4 756.3,173.9 751.0,177.4 752.7,171.3 747.7,167.4 754.1,167.1" fill="#F5F2EA"/><polygon points="779.4,202.7 781.6,208.6 787.9,208.9 783.0,212.9 784.7,219.0 779.4,215.5 774.1,219.0 775.8,212.9 770.8,208.9 777.2,208.6" fill="#F5F2EA"/><polygon points="802.5,244.2 804.7,250.2 811.0,250.4 806.1,254.4 807.8,260.5 802.5,257.0 797.2,260.5 798.9,254.4 793.9,250.4 800.2,250.2" fill="#F5F2EA"/><polygon points="825.5,285.8 827.8,291.7 834.1,292.0 829.1,295.9 830.8,302.1 825.5,298.5 820.2,302.1 821.9,295.9 817.0,292.0 823.3,291.7" fill="#F5F2EA"/></g>
-<rect x="40" y="45" width="100" height="100" rx="12" fill="#122672"/>
-<rect x="36" y="40" width="100" height="100" rx="12" fill="#1F3FB0" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<polygon points="76,40 124,40 124,140" fill="#FECB00"/>
-<rect x="36" y="40" width="100" height="100" rx="12" fill="none" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<text x="74" y="106" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="38" fill="#F5F2EA">JK</text>
-<text x="166" y="62" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="15" fill="#CDBE9E">Hi, I&#39;m</text>
-<text x="166" y="104" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="42" fill="#F5F2EA">Jasmin Krhan</text>
-<rect x="168" y="116" width="62" height="5" rx="2.5" fill="#FECB00"/>
-<rect x="236" y="116" width="14" height="5" rx="2.5" fill="#12A39A"/>
-<text x="166" y="150" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="600" font-size="18" fill="#F5F2EA">Driving projects from start to production</text>
-<text x="166" y="176" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="13" fill="#FECB00">Senior C#/.NET &amp; Full-Stack Developer</text>
-<rect x="168" y="199" width="93.5" height="26" rx="8" fill="#122672"/>
-<rect x="166" y="196" width="93.5" height="26" rx="8" fill="#1F3FB0"/>
-<text x="212.75" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F5F2EA">C# / .NET</text><rect x="271.5" y="199" width="101" height="26" rx="8" fill="#0A6560"/>
-<rect x="269.5" y="196" width="101" height="26" rx="8" fill="#12A39A"/>
-<text x="320" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F5F2EA">Full-Stack</text><rect x="382.5" y="199" width="63.5" height="26" rx="8" fill="#741427"/>
-<rect x="380.5" y="196" width="63.5" height="26" rx="8" fill="#B8233C"/>
-<text x="412.25" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F5F2EA">Azure</text><rect x="456" y="199" width="138.5" height="26" rx="8" fill="#857759"/>
-<rect x="454" y="196" width="138.5" height="26" rx="8" fill="#CDBE9E"/>
-<text x="523.25" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#0A1233">AI Agents &amp; RAG</text><rect x="604.5" y="199" width="93.5" height="26" rx="8" fill="#122672"/>
-<rect x="602.5" y="196" width="93.5" height="26" rx="8" fill="#1F3FB0"/>
-<text x="649.25" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F5F2EA">12+ years</text><rect x="168" y="235" width="138.5" height="26" rx="8" fill="#0A6560"/>
-<rect x="166" y="232" width="138.5" height="26" rx="8" fill="#12A39A"/>
-<text x="235.25" y="249.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F5F2EA">Remote · Europe</text>
+<rect x="1" y="1" width="838" height="292" rx="18" fill="#16212E" stroke="#2A3A4E" stroke-width="2"/>
+<rect x="1" y="1" width="838" height="292" rx="18" fill="url(#dots)"/>
+<clipPath id="clip"><rect x="1" y="1" width="838" height="292" rx="18"/></clipPath>
+<g clip-path="url(#clip)"><circle cx="792" cy="58" r="24" fill="#EE6B2C" opacity=".9"/>
+<circle cx="600" cy="40" r="1.4" fill="#EEF1EC" opacity=".7"/><circle cx="640" cy="70" r="1.4" fill="#EEF1EC" opacity=".7"/><circle cx="700" cy="34" r="1.4" fill="#EEF1EC" opacity=".7"/><circle cx="560" cy="92" r="1.4" fill="#EEF1EC" opacity=".7"/><circle cx="742" cy="26" r="1.4" fill="#EEF1EC" opacity=".7"/><path d="M520 294 L575 199 L612 224 L668 129 L705 174 L748 112 L800 166 L840 134 L840 294 Z" fill="#4B5B70" opacity=".55"/><path d="M560 294 L622 212 L655 232 L722 146 L770 198 L806 174 L840 210 L840 294 Z" fill="#1B4231"/>
+<path d="M722 146 L706 167 L715 164 L722 173 L730 163 L739 168 Z" fill="#EEF1EC"/>
+<path d="M806 174 L796 187 L803 185 L809 191 L815 184 Z" fill="#EEF1EC"/><path d="M610 288 C660 276 640 254 688 242 S678 206 704 194 S716 168 722 148" fill="none" stroke="#EE6B2C" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
+<line x1="722" y1="146" x2="722" y2="118" stroke="#EEF1EC" stroke-width="2"/>
+<polygon points="722,118 742,125 722,132" fill="#EE6B2C"/><path d="M590 294 Q660 260 712 270 T840 256 L840 294 Z" fill="#111923"/>
+<polygon points="640,264 633,284 647,284" fill="#2F6B4F"/><polygon points="664,258 657,278 671,278" fill="#2F6B4F"/><polygon points="790,250 783,270 797,270" fill="#2F6B4F"/><polygon points="812,246 805,266 819,266" fill="#2F6B4F"/></g>
+<rect x="40" y="45" width="100" height="100" rx="12" fill="#1B4231"/>
+<rect x="36" y="40" width="100" height="100" rx="12" fill="#2F6B4F" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<path d="M44 132 L70 96 L82 110 L100 84 L128 132 Z" fill="#1B4231"/>
+<path d="M100 84 L93 94 L100 92 L106 97 Z" fill="#EEF1EC"/>
+<text x="74" y="84" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="34" fill="#F1F3EE">JK</text>
+<circle cx="122" cy="54" r="7" fill="#D7263D"/><circle cx="122" cy="54" r="3.1" fill="#FFFFFF"/>
+<text x="166" y="62" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="15" fill="#CDA86E">Hi, I&#39;m</text>
+<text x="166" y="104" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="42" fill="#F1F3EE">Jasmin Krhan</text>
+<path d="M168 120 l14 -6 l12 4 l16 -8 l14 6 l18 -4" fill="none" stroke="#EE6B2C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="166" y="150" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="600" font-size="18" fill="#F1F3EE">Driving projects from start to production</text>
+<text x="166" y="176" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="13" fill="#86B04A">Senior C#/.NET &amp; Full-Stack Developer</text>
+<rect x="168" y="199" width="93.5" height="26" rx="8" fill="#1B4231"/>
+<rect x="166" y="196" width="93.5" height="26" rx="8" fill="#2F6B4F"/>
+<text x="212.75" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F1F3EE">C# / .NET</text><rect x="271.5" y="199" width="101" height="26" rx="8" fill="#A2441A"/>
+<rect x="269.5" y="196" width="101" height="26" rx="8" fill="#EE6B2C"/>
+<text x="320" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#111923">Full-Stack</text><rect x="382.5" y="199" width="63.5" height="26" rx="8" fill="#2E3A4A"/>
+<rect x="380.5" y="196" width="63.5" height="26" rx="8" fill="#4B5B70"/>
+<text x="412.25" y="213.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F1F3EE">Azure</text><rect x="168" y="235" width="138.5" height="26" rx="8" fill="#8C6F40"/>
+<rect x="166" y="232" width="138.5" height="26" rx="8" fill="#CDA86E"/>
+<text x="235.25" y="249.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#111923">AI Agents &amp; RAG</text><rect x="316.5" y="235" width="93.5" height="26" rx="8" fill="#56762C"/>
+<rect x="314.5" y="232" width="93.5" height="26" rx="8" fill="#86B04A"/>
+<text x="361.25" y="249.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#111923">12+ years</text><rect x="420" y="235" width="138.5" height="26" rx="8" fill="#1B4231"/>
+<rect x="418" y="232" width="138.5" height="26" rx="8" fill="#2F6B4F"/>
+<text x="487.25" y="249.5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-weight="700" font-size="12.5" fill="#F1F3EE">Remote · Europe</text>
 </svg>

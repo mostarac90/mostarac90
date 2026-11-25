@@ -1,43 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="330" viewBox="0 0 840 330" role="img" aria-label="121 contributions in the last year, 4-day current streak, 7-day longest streak, 124 contributions since 2022">
 <title>121 contributions in the last year, 4-day current streak, 7-day longest streak, 124 contributions since 2022</title>
 <defs>
-  <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#1E2C6B"/></pattern>
+  <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#1F2C3B"/></pattern>
+  
 </defs>
-<rect x="1" y="1" width="838" height="328" rx="18" fill="#101B47" stroke="#24337A" stroke-width="2"/>
+<rect x="1" y="1" width="838" height="328" rx="18" fill="#16212E" stroke="#2A3A4E" stroke-width="2"/>
 <rect x="1" y="1" width="838" height="328" rx="18" fill="url(#dots)"/>
-<text x="30" y="50" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#F5F2EA">On GitHub</text>
-<text x="810" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#A9B3D9">redrawn every night · 25 Nov 2026</text>
-<rect x="34" y="85" width="180" height="124" rx="12" fill="#122672"/>
-<rect x="30" y="80" width="180" height="124" rx="12" fill="#1F3FB0" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<g transform="translate(176,96)"><rect x="1" y="3" width="16" height="14" rx="2.5" fill="none" stroke="#FECB00" stroke-width="2"/><rect x="1" y="3" width="16" height="5" rx="2" fill="#FECB00"/><rect x="4.5" y="0" width="2" height="5" rx="1" fill="#FECB00"/><rect x="11.5" y="0" width="2" height="5" rx="1" fill="#FECB00"/></g>
-<text x="46" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#F5F2EA">121</text>
-<text x="46" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">contributions in</text>
-<text x="46" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">the last year</text><rect x="234" y="85" width="180" height="124" rx="12" fill="#0A6560"/>
-<rect x="230" y="80" width="180" height="124" rx="12" fill="#12A39A" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<g transform="translate(376,96)"><path d="M9 0C10 4 15 6 15 11.5A6 6 0 0 1 3 11.5C3 8 5 6.5 6 4C7 6.5 8 7 9 7C9 4.5 9 2.5 9 0Z" fill="#FECB00"/></g>
-<text x="246" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#F5F2EA">4 days</text>
-<text x="246" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">current streak</text>
-<text x="246" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">since 22 Nov</text><rect x="434" y="85" width="180" height="124" rx="12" fill="#A98700"/>
-<rect x="430" y="80" width="180" height="124" rx="12" fill="#FECB00" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<g transform="translate(576,96)"><path d="M4 1H14V7A5 5 0 0 1 4 7Z" fill="#B8233C"/><path d="M4 3H1V5A3 3 0 0 0 4 8M14 3H17V5A3 3 0 0 1 14 8" fill="none" stroke="#B8233C" stroke-width="1.6"/><rect x="8" y="11" width="2" height="3" fill="#B8233C"/><rect x="5" y="14" width="8" height="3" rx="1" fill="#B8233C"/></g>
-<text x="446" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#0A1233">7 days</text>
-<text x="446" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#0A1233" fill-opacity=".9">longest streak</text>
-<text x="446" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#0A1233" fill-opacity=".9">ever</text><rect x="634" y="85" width="180" height="124" rx="12" fill="#741427"/>
-<rect x="630" y="80" width="180" height="124" rx="12" fill="#B8233C" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<g transform="translate(776,96)"><rect x="1" y="9" width="4" height="8" rx="1" fill="#FECB00"/><rect x="7" y="4" width="4" height="13" rx="1" fill="#FECB00"/><rect x="13" y="0" width="4" height="17" rx="1" fill="#FECB00"/></g>
-<text x="646" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#F5F2EA">124</text>
-<text x="646" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">contributions</text>
-<text x="646" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">since 2022</text><rect x="34" y="239" width="248" height="60" rx="12" fill="#857759"/>
-<rect x="30" y="234" width="248" height="60" rx="12" fill="#CDBE9E" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<g transform="translate(48,255)"><path d="M1 4A2 2 0 0 1 3 2H7L9 4H17A2 2 0 0 1 19 6V14A2 2 0 0 1 17 16H3A2 2 0 0 1 1 14Z" fill="#1F3FB0"/></g>
-<text x="80" y="273" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#0A1233">9</text>
-<text x="104" y="271" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#0A1233" fill-opacity=".9">public repos</text><rect x="300" y="239" width="248" height="60" rx="12" fill="#122672"/>
-<rect x="296" y="234" width="248" height="60" rx="12" fill="#1F3FB0" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<g transform="translate(314,255)"><polygon points="10.0,0.0 12.5,6.6 19.5,6.9 14.0,11.3 15.9,18.1 10.0,14.2 4.1,18.1 6.0,11.3 0.5,6.9 7.5,6.6" fill="#FECB00"/></g>
-<text x="346" y="273" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#F5F2EA">3</text>
-<text x="370" y="271" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">stars earned</text><rect x="566" y="239" width="248" height="60" rx="12" fill="#0A6560"/>
-<rect x="562" y="234" width="248" height="60" rx="12" fill="#12A39A" stroke="#0A1233" stroke-opacity=".35" stroke-width="1.5"/>
-<g transform="translate(580,255)"><path d="M6 3L1 9L6 15M14 3L19 9L14 15" fill="none" stroke="#FECB00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
-<text x="612" y="273" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#F5F2EA">C#</text>
-<text x="650" y="271" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F5F2EA" fill-opacity=".9">top language</text>
+<circle cx="40" cy="42" r="9" fill="#D7263D"/><circle cx="40" cy="42" r="4.0" fill="#FFFFFF"/>
+<text x="58" y="50" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#F1F3EE">Trail log</text>
+<text x="810" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#9AA8B8">GitHub activity · redrawn every night · 25 Nov 2026</text>
+<rect x="34" y="85" width="180" height="124" rx="12" fill="#1B4231"/>
+<rect x="30" y="80" width="180" height="124" rx="12" fill="#2F6B4F" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<g transform="translate(176,98)"><path d="M1 3L6 1L12 3L17 1V15L12 17L6 15L1 17Z" fill="none" stroke="#CDA86E" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 1V15M12 3V17" stroke="#CDA86E" stroke-width="1.5"/></g>
+<text x="46" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#F1F3EE">121</text>
+<text x="46" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F1F3EE" fill-opacity=".9">contributions in</text>
+<text x="46" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F1F3EE" fill-opacity=".9">the last year</text><rect x="234" y="85" width="180" height="124" rx="12" fill="#A2441A"/>
+<rect x="230" y="80" width="180" height="124" rx="12" fill="#EE6B2C" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<g transform="translate(376,98)"><ellipse cx="5" cy="11" rx="3.2" ry="5" fill="#111923"/><ellipse cx="13" cy="6" rx="3.2" ry="5" fill="#111923"/></g>
+<text x="246" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#111923">4 days</text>
+<text x="246" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#111923" fill-opacity=".9">on the trail now</text>
+<text x="246" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#111923" fill-opacity=".9">since 22 Nov</text><rect x="434" y="85" width="180" height="124" rx="12" fill="#A9B2AA"/>
+<rect x="430" y="80" width="180" height="124" rx="12" fill="#EEF1EC" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<g transform="translate(576,98)"><path d="M0 17L7 4L11 10L13 7L19 17Z" fill="#D7263D"/><path d="M7 4V-2M7 -2L12 0L7 2" fill="#D7263D" stroke="#D7263D" stroke-width="1.4"/></g>
+<text x="446" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#111923">7 days</text>
+<text x="446" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#111923" fill-opacity=".9">longest run</text>
+<text x="446" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#111923" fill-opacity=".9">(best streak)</text><rect x="634" y="85" width="180" height="124" rx="12" fill="#2E3A4A"/>
+<rect x="630" y="80" width="180" height="124" rx="12" fill="#4B5B70" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<g transform="translate(776,98)"><path d="M0 17L4 10L7 13L11 4L15 9L19 6V17Z" fill="#86B04A"/></g>
+<text x="646" y="142" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="32" fill="#F1F3EE">124</text>
+<text x="646" y="168" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F1F3EE" fill-opacity=".9">total ascent</text>
+<text x="646" y="185" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F1F3EE" fill-opacity=".9">since 2022</text><rect x="34" y="239" width="248" height="60" rx="12" fill="#8C6F40"/>
+<rect x="30" y="234" width="248" height="60" rx="12" fill="#CDA86E" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<g transform="translate(48,255)"><path d="M1 4A2 2 0 0 1 3 2H7L9 4H17A2 2 0 0 1 19 6V14A2 2 0 0 1 17 16H3A2 2 0 0 1 1 14Z" fill="#1B4231"/></g>
+<text x="80" y="273" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#111923">9</text>
+<text x="104" y="271" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#111923" fill-opacity=".9">public repos</text><rect x="300" y="239" width="248" height="60" rx="12" fill="#1B4231"/>
+<rect x="296" y="234" width="248" height="60" rx="12" fill="#2F6B4F" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<g transform="translate(314,255)"><polygon points="10.0,0.0 12.5,6.6 19.5,6.9 14.0,11.3 15.9,18.1 10.0,14.2 4.1,18.1 6.0,11.3 0.5,6.9 7.5,6.6" fill="#CDA86E"/></g>
+<text x="346" y="273" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#F1F3EE">3</text>
+<text x="370" y="271" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F1F3EE" fill-opacity=".9">stars earned</text><rect x="566" y="239" width="248" height="60" rx="12" fill="#2E3A4A"/>
+<rect x="562" y="234" width="248" height="60" rx="12" fill="#4B5B70" stroke="#111923" stroke-opacity=".35" stroke-width="1.5"/>
+<g transform="translate(580,255)"><path d="M6 3L1 9L6 15M14 3L19 9L14 15" fill="none" stroke="#86B04A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="612" y="273" font-family="'Segoe UI', 'Helvetica Neue', Ubuntu, Arial, sans-serif" font-weight="800" font-size="24" fill="#F1F3EE">C#</text>
+<text x="650" y="271" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12.5" fill="#F1F3EE" fill-opacity=".9">top language</text>
 </svg>
